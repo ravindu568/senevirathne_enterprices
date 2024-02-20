@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="context" prefHeight="548.0" prefWidth="406.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.LoginForm">
+   <children>
+      <Text fill="#801818" layoutX="62.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senevirathna Entraprices">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#7c2626" layoutX="26.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogIn">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Separator layoutX="26.0" layoutY="132.0" prefHeight="5.0" prefWidth="362.0" />
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="24.0" layoutY="164.0" prefHeight="45.0" prefWidth="344.0" promptText="email" />
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="24.0" layoutY="257.0" prefHeight="54.0" prefWidth="344.0" promptText="password" />
+      <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="353.0" onAction="#btnSignInOnAction" prefHeight="45.0" prefWidth="355.0" style="-fx-background-color: #3498db;" text="Sign In" textFill="#ecf0f1">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="457.0" onAction="#btnCreateAnAccountOnAction" prefHeight="45.0" prefWidth="355.0" style="-fx-background-color: #34495e;" text="Create an account" textFill="#ecf0f1">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#7c2626" layoutX="190.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
