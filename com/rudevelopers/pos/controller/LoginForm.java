@@ -41,6 +41,7 @@ public class LoginForm {
                 if(PasswordManager.passChecker(txtPassword.getText(),set.getString("password"))){
 
                     System.out.println("Completed");
+                    setUi("DashBoardForm");
 
 
                 }else{
@@ -57,8 +58,9 @@ public class LoginForm {
             e.printStackTrace();
             new Alert(Alert.AlertType.WARNING,"Try Again!").show();
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
 
 
     }
