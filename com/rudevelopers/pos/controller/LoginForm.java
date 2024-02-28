@@ -2,13 +2,16 @@ package com.rudevelopers.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.rudevelopers.pos.util.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class LoginForm {
     public JFXPasswordField txtPassword;
@@ -21,6 +24,43 @@ public class LoginForm {
     }
 
     public void btnSignInOnAction(ActionEvent actionEvent) {
+
+        try{
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3307/mydb","root","1234");
+            String sql="SELECT * FROM user WHERE email=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,txtEmail.getText());
+
+            ResultSet set=preparedStatement.executeQuery();
+
+
+            if(set.next()){
+
+                if(PasswordManager.passChecker(txtPassword.getText(),set.getString("password"))){
+
+                    System.out.println("Completed");
+
+
+                }else{
+
+                    new Alert(Alert.AlertType.WARNING,"Check your password and Try Again").show();
+
+                }
+            }else{
+                new Alert(Alert.AlertType.WARNING,"Try Again!").show();
+            }
+
+
+        }catch(ClassNotFoundException | SQLException e){
+            e.printStackTrace();
+            new Alert(Alert.AlertType.WARNING,"Try Again!").show();
+
+        }
+
+
+
     }
 
     public void setUi(String url) throws IOException {

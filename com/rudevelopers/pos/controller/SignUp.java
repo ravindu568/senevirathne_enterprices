@@ -2,6 +2,7 @@ package com.rudevelopers.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.rudevelopers.pos.util.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -33,10 +34,11 @@ public class SignUp {
             String sql="INSERT INTO user VALUES (?,?)";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setString(1,txtEmail.getText());
-            preparedStatement.setString(2,txtPassword.getText());
+            preparedStatement.setString(2, PasswordManager.encryptPassword(txtPassword.getText()));
 
             if(preparedStatement.executeUpdate()>0){
                 new Alert(Alert.AlertType.CONFIRMATION,"User Saved!").show();
+                clearFields();
             }else{
                 new Alert(Alert.AlertType.WARNING,"Try Again!").show();
             }
@@ -50,6 +52,12 @@ public class SignUp {
 
 
 
+    }
+
+    private void clearFields() {
+
+        txtEmail.clear();
+        txtPassword.clear();
     }
 
     public void setUi(String url) throws IOException {
