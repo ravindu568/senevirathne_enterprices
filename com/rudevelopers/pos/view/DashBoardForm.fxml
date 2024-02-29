@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="416.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.DashBoardForm">
+<AnchorPane fx:id="context" prefHeight="416.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.DashBoardForm">
    <children>
       <Label layoutX="21.0" layoutY="14.0" text="Dashboard" textFill="#8a0f0f">
          <font>

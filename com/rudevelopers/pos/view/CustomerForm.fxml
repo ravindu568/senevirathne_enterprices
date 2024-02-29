@@ -4,12 +4,13 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.CustomerForm">
+<AnchorPane id="context" fx:id="context" prefHeight="581.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.CustomerForm">
    <children>
       <Label layoutX="31.0" layoutY="24.0" text="Dashboard" textFill="#8a0f0f">
          <font>
@@ -32,10 +33,25 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXTextField layoutX="23.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" />
-      <JFXTextField layoutX="306.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="name" />
-      <JFXTextField layoutX="574.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="contact" />
-      <JFXTextField layoutX="23.0" layoutY="135.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="salary" />
-      <TextField layoutX="23.0" layoutY="185.0" prefHeight="31.0" prefWidth="807.0" promptText="Search" />
+      <JFXTextField fx:id="txtEmail" layoutX="23.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" />
+      <JFXTextField fx:id="txtName" layoutX="306.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="name" />
+      <JFXTextField fx:id="txtContact" layoutX="574.0" layoutY="85.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="contact" />
+      <JFXTextField fx:id="txtSalary" layoutX="23.0" layoutY="135.0" prefHeight="31.0" prefWidth="251.0" promptText="email" text="salary" />
+      <TextField fx:id="txtSearch" layoutX="22.0" layoutY="217.0" prefHeight="31.0" prefWidth="807.0" promptText="Search" />
+      <TableView layoutX="15.0" layoutY="263.0" prefHeight="236.0" prefWidth="807.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="131.0" text="#" />
+          <TableColumn fx:id="colEmail" prefWidth="124.0" text="email" />
+            <TableColumn fx:id="colName" prefWidth="151.0" text="name" />
+            <TableColumn fx:id="colContact" prefWidth="169.0" text="contact" />
+            <TableColumn fx:id="colSalary" prefWidth="134.0" text="salary" />
+            <TableColumn fx:id="colOperation" prefWidth="97.0" text="Operation" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnSaveUpdate" layoutX="548.0" layoutY="166.0" onAction="#btnSaveUpdateOnAction" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #2980b9;" text="Save Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

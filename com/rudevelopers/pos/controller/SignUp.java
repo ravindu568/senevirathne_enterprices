@@ -2,6 +2,7 @@ package com.rudevelopers.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.rudevelopers.pos.dao.dataBaseAccessCode;
 import com.rudevelopers.pos.util.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -29,14 +30,7 @@ public class SignUp {
 
         try{
 
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3307/mydb","root","1234");
-            String sql="INSERT INTO user VALUES (?,?)";
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,txtEmail.getText());
-            preparedStatement.setString(2, PasswordManager.encryptPassword(txtPassword.getText()));
-
-            if(preparedStatement.executeUpdate()>0){
+            if(dataBaseAccessCode.createUser(txtEmail.getText(),txtPassword.getText())){
                 new Alert(Alert.AlertType.CONFIRMATION,"User Saved!").show();
                 clearFields();
             }else{

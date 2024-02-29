@@ -2,6 +2,8 @@ package com.rudevelopers.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.rudevelopers.pos.dao.dataBaseAccessCode;
+import com.rudevelopers.pos.dto.UserDto;
 import com.rudevelopers.pos.util.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -27,18 +29,10 @@ public class LoginForm {
 
         try{
 
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3307/mydb","root","1234");
-            String sql="SELECT * FROM user WHERE email=?";
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,txtEmail.getText());
+            UserDto ud= dataBaseAccessCode.findUser(txtEmail.getText());
+            if(ud!=null){
 
-            ResultSet set=preparedStatement.executeQuery();
-
-
-            if(set.next()){
-
-                if(PasswordManager.passChecker(txtPassword.getText(),set.getString("password"))){
+                if(PasswordManager.passChecker(txtPassword.getText(),ud.getPassword())){
 
                     System.out.println("Completed");
                     setUi("DashBoardForm");
