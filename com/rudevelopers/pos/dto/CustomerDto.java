@@ -4,7 +4,18 @@ public class CustomerDto {
 
     private String name;
     private String email;
-   private String contact;
+
+    public CustomerDto() {
+    }
+
+    public CustomerDto(String name, String email, String contact, double salary) {
+        this.name = name;
+        this.email = email;
+        this.contact = contact;
+        this.salary = salary;
+    }
+
+    private String contact;
     private double salary;
 
     public String getName() {
