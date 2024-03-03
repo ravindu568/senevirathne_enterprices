@@ -1,22 +1,37 @@
-package com.rudevelopers.pos.dto;
+package com.rudevelopers.pos.view.tm;
 
-public class CustomerDto {
+import javafx.scene.control.Button;
 
+public class CustomerTM {
+
+    private int id;
     private String name;
     private String email;
     private String contact;
-    private double salary;
-    public CustomerDto() {
-    }
 
-    public CustomerDto(String name, String email, String contact, double salary) {
+    private double salary;
+    private Button deleteBtn;
+
+    public CustomerTM() {
+    }
+    public CustomerTM(int id, String name, String email, String contact, double salary, Button deleteBtn) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.contact = contact;
         this.salary = salary;
+        this.deleteBtn = deleteBtn;
     }
 
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -49,4 +64,16 @@ public class CustomerDto {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+    public Button getDeleteBtn() {
+        return deleteBtn;
+    }
+
+    public void setDeleteBtn(Button deleteBtn) {
+        this.deleteBtn = deleteBtn;
+    }
+
+
+
+
 }

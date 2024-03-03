@@ -51,9 +51,9 @@ public class dataBaseAccessCode {
     public static boolean createCustomer(String email,String name,String contact,Double salary) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3307/mydb","root","1234");
-        String sql="INSERT INTO customer VALUES (?,?,?,?)";
+        String sql="INSERT INTO customer(email,name,contact,salary) VALUES (?,?,?,?)";
         PreparedStatement preparedStatement=connection.prepareStatement(sql);
-        preparedStatement.setString(1,email);
+        preparedStatement.setString(1, email);
         preparedStatement.setString(2, name);
         preparedStatement.setString(3, contact);
         preparedStatement.setDouble(4, salary);

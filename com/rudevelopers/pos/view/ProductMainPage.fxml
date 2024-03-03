@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="783.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rudevelopers.pos.controller.ProductMainPageController">
+   <children>
+      <Label layoutX="41.0" layoutY="34.0" text="Product Management" textFill="#8a0f0f">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Separator layoutX="33.0" layoutY="69.0" prefHeight="15.0" prefWidth="1247.0" />
+      <JFXButton layoutX="1154.0" layoutY="33.0" style="-fx-background-color: #95a5a6;" text="Back to Home" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="1147.0" layoutY="112.0" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #2980b9;" text="+ New Batch" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane layoutX="39.0" layoutY="96.0" prefHeight="658.0" prefWidth="559.0" style="-fx-background-color: #bdc3c7;">
+         <children>
+            <JFXTextField editable="false" layoutX="25.0" layoutY="36.0" promptText="Product Code" />
+            <JFXButton layoutX="411.0" layoutY="36.0" style="-fx-background-color: #2980b9;" text="+New Product" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextArea layoutX="25.0" layoutY="101.0" prefHeight="200.0" prefWidth="507.0" promptText="Description">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextArea>
+            <JFXButton layoutX="380.0" layoutY="321.0" prefHeight="31.0" prefWidth="152.0" style="-fx-background-color: #2980b9;" text="Save Product" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField layoutX="25.0" layoutY="374.0" prefHeight="31.0" prefWidth="507.0" promptText="Search Here" />
+            <TableView layoutX="25.0" layoutY="420.0" prefHeight="200.0" prefWidth="507.0">
+              <columns>
+                <TableColumn prefWidth="109.99996948242188" text="#" />
+                <TableColumn prefWidth="120.00003051757812" text="Desc" />
+                  <TableColumn prefWidth="145.0" text="Show more" />
+                  <TableColumn prefWidth="133.0" text="Delete" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="607.0" layoutY="93.0" orientation="VERTICAL" prefHeight="665.0" prefWidth="1.0" />
+      <TextArea layoutX="620.0" layoutY="178.0" prefHeight="143.0" prefWidth="666.0" promptText="Description">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </TextArea>
+      <TextField layoutX="620.0" layoutY="112.0" prefHeight="31.0" prefWidth="498.0" promptText="Select Product Code" />
+      <TableView layoutX="620.0" layoutY="338.0" prefHeight="431.0" prefWidth="666.0">
+         <columns>
+            <TableColumn prefWidth="85.0" text="#" />
+            <TableColumn prefWidth="79.0" text="QTY" />
+            <TableColumn prefWidth="136.0" text="Selling Price" />
+            <TableColumn minWidth="0.0" prefWidth="133.0" text="Buying Price" />
+            <TableColumn prefWidth="60.0" text="D:Avg" />
+            <TableColumn minWidth="0.0" prefWidth="86.0" text="Show Price" />
+            <TableColumn prefWidth="98.0" text="Delete" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -18,7 +18,8 @@ public class DashBoardForm {
         setUi("CustomerForm");
     }
 
-    public void btnProductOnAction(ActionEvent actionEvent) {
+    public void btnProductOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("ProductMainPage");
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
