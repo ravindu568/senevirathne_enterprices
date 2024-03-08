@@ -1,23 +1,24 @@
 package com.rudevelopers.pos.entity;
 
 public class User {
-    private String user;
-    private String password;
+    private String email;
 
-    public User(String user, String password) {
-        this.user = user;
-        this.password = password;
-    }
+    private String password;
 
     public User() {
     }
 
-    public String getUser() {
-        return user;
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -31,7 +32,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "user='" + user + '\'' +
+                "email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
